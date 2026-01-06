@@ -13,10 +13,18 @@ SHIP_COUNT = 5
 MAP_SIZE = 100
 
 # 自动判断可执行文件名称
-if platform.system() == "Windows":
+if len(sys.argv) > 1:
+    STUDENT_CMD = [sys.argv[1]]
+elif platform.system() == "Windows":
     STUDENT_CMD = ["main.exe"]
 else:
     STUDENT_CMD = ["./main"]  # Linux / MacOS
+
+# 设置随机种子
+if len(sys.argv) > 2:
+    random.seed(int(sys.argv[2]))
+else:
+    random.seed(42)  # 默认固定种子，保证每次运行结果一致
 
 
 class GameState:

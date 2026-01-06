@@ -272,7 +272,7 @@ int main() {
                     }
                 }
 
-                if (final_move_dir == -1 && robots[i].stuck_count > 2) {
+                if (final_move_dir == -1 && robots[i].stuck_count >5) {
                     vector<int> alt_dirs;
                     for (int d = 0; d < 4; d++) {
                         if (d == move_dir) continue;

@@ -371,8 +371,8 @@ int main() {
                 }
 
                 // 2. 防卡死机制：如果最优路径被阻挡 或 无路径，且已卡住一段时间
-                // 阈值设为2，意味着如果连续2帧没动，就开始尝试绕路
-                if (final_move_dir == -1 && robots[i].stuck_count > 2) {
+                // 阈值设为5，意味着如果连续5帧没动，就开始尝试绕路
+                if (final_move_dir == -1 && robots[i].stuck_count >5) {
                     vector<int> alt_dirs;
                     for (int d = 0; d < 4; d++) {
                         if (d == move_dir) continue; // 跳过原本想走但走不通的方向

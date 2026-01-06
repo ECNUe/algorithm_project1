@@ -263,7 +263,7 @@ int main() {
                     int ny = robots[i].y + dy[move_dir];
                     occupied[nx][ny] = true;
                 } else {
-                    if (robots[i].stuck_count > 5) {
+                    if (robots[i].stuck_count >5) {
                         int rand_dir = rand() % 4;
                         int nx = robots[i].x + dx[rand_dir];
                         int ny = robots[i].y + dy[rand_dir];
